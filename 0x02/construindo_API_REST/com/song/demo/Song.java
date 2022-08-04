@@ -1,5 +1,7 @@
 package com.song.demo;
 
+import java.util.Objects;
+
 public class Song {
     private Integer id;
     private String nome;
@@ -57,4 +59,26 @@ public class Song {
     public void setAnoLancamento(String anoLancamento) {
         this.anoLancamento = anoLancamento;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.nome, this.album, this.artista, this.anoLancamento);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null) return false;
+        if(obj.getClass() != this.getClass()) return false;
+
+        Song song = (Song) obj;
+        return this.nome.equals(song.getNome()) && this.artista.equals(song.getArtista())
+                && this.album.equals(song.getAlbum()) && this.anoLancamento.equals(song.getAnoLancamento());
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Nome: %s\nArtista: %s\nAlbum: %s\nAno Lancamento: %s",
+                this.nome, this.artista, this.album, this.anoLancamento);
+    }
 }
+
