@@ -13,7 +13,7 @@ import java.util.List;
 public class MegaSenaController {
 
     @GetMapping("/simpleMessageWelcome")
-    public String boasVindas(){
+    public String mensagemBoasVindas(){
         return "Seja bem vindo!";
     }
 
