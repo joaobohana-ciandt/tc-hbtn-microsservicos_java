@@ -25,7 +25,7 @@ public class ExceptionService {
     }
 
     @ExceptionHandler
-    ResponseEntity<UserNameException> handleException(CPFException err){
+    ResponseEntity<UserNameException> handleException(UserNameException err){
         UserErrorResponse uer = new UserErrorResponse();
         uer.setStatus(HttpStatus.NOT_FOUND.value());
         uer.setMessage("You have entered NAME " + err.getMessage() + " invalid.");

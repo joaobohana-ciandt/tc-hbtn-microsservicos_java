@@ -17,7 +17,7 @@ public class UserController {
 
         String msg;
         if(id > 0 && id < 100){
-            msg = "You have entered a valid ID";
+            msg = "You have entered valid ID";
         } else {
             throw new UserIdException();
         }
