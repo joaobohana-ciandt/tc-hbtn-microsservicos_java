@@ -10,6 +10,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class CalculatorTest {
 
     private final Calculator calculator = new Calculator();
+    
+    @BeforeEach
+    void init(){
+        System.out.println("teste");
+    }
 
     @Test
     void sumTest() {
